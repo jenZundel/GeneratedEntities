@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="IntegratedTest">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@uslcdbt02.ut.regence.com:1521:q077"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+            <property name="hibernate.connection.username" value="psearch"/>
+            <property name="hibernate.connection.password" value="Mond@ys1"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="false"/>
+            <property name="hibernate.format_sql" value="false"/>
+        </properties>
+    </persistence-unit>
+    <persistence-unit name="test">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>doFirst.Provider</class>
+        <class>doFirst.Location</class>
+        <class>doFirst.ProviderLocation</class>
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
+            <property name="hibernate.connection.username" value="sa"/>
+            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.url" value="jdbc:hsqldb:mem:zensession"/>
+            <property name="hibernate.showSql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
